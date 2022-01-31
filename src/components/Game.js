@@ -1,5 +1,5 @@
-import Character from "./Character";
+import Character2 from "./Character2";
 const Game = () =>{
-return(<Character/>)
+return(<Character2/>)
 }
 export default Game

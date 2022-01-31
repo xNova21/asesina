@@ -1,4 +1,4 @@
-import { Table } from "react-bootstrap";
+import { Table, ListGroup, Accordion } from "react-bootstrap";
 
 let personaje = {
   nombre: "Vlada",
@@ -25,82 +25,94 @@ let personaje = {
 const Character = () => {
   return (
     <div>
-      <Table striped>
-        <thead>
-          <tr>
-            <th colSpan={4}>Datos del sospechoso</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Nombre</th>
-            <td colSpan={3}>{personaje.nombre}</td>
-          </tr>
-          <tr>
-            <th>Nacionalidad</th>
-            <td>{personaje.nacionalidad}</td>
-            <th>Sexo</th>
-            <td>{personaje.sexo}</td>
-          </tr>
-          <tr>
-            <th>Ojos</th>
-            <td>{personaje.ojos}</td>
-            <th>Pelo</th>
-            <td>{personaje.pelo}</td>
-          </tr>
-          <tr>
-            <th>Arma</th>
-            <td colSpan={3}>{personaje.arma}</td>
-          </tr>
-          <tr>
-            <th>Heridas</th>
-            <td colSpan={3}>{personaje.heridas}</td>
-          </tr>
-        </tbody>
-      </Table>
-      <Table striped>
-        <thead>
-          <tr>
-            <th colSpan={4}>Características</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Artes Marciales</th>
-            <td>{personaje.conocimientos.arteMarcial}</td>
-            <th>Atletismo</th>
-            <td>{personaje.conocimientos.atletismo}</td>
-          </tr>
-          <tr>
-            <th>Arma de Fuego</th>
-            <td>{personaje.conocimientos.armaFuego}</td>
-            <th>Diplomacia</th>
-            <td>{personaje.conocimientos.diplomacia}</td>
-          </tr>
-          <tr>
-            <th>Callejeo</th>
-            <td>{personaje.conocimientos.callejeo}</td>
-            <th>Ciencias</th>
-            <td>{personaje.conocimientos.ciencias}</td>
-          </tr>
-        </tbody>
-      </Table>
-      <Table>
-        <thead>
-          <tr>
-            <th>Objetos</th>
-          </tr>
-        </thead>
-        <tbody>
-          {personaje.cosas.map((cosa) => {
-            return (
-              <tr>
-                <td>{cosa}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      <Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Datos del sospechoso</Accordion.Header>
+          <Accordion.Body>
+            <Table striped variant="dark">
+              <tbody>
+                <tr>
+                  <th>Nombre</th>
+                  <td colSpan={3}>{personaje.nombre}</td>
+                </tr>
+                <tr>
+                  <th>Nacionalidad</th>
+                  <td>{personaje.nacionalidad}</td>
+                  <th>Sexo</th>
+                  <td>{personaje.sexo}</td>
+                </tr>
+                <tr>
+                  <th>Ojos</th>
+                  <td>{personaje.ojos}</td>
+                  <th>Pelo</th>
+                  <td>{personaje.pelo}</td>
+                </tr>
+                <tr>
+                  <th colSpan={4}>Descripción</th>
+                </tr>
+                <tr>
+                  {personaje.descripcion.map((one) => {
+                    return <td key={one}>{one}</td>;
+                  })}
+                </tr>
+                <tr>
+                  <th>Arma</th>
+                  <td colSpan={3}>{personaje.arma}</td>
+                </tr>
+                <tr>
+                  <th>Heridas</th>
+                  <td colSpan={3}>{personaje.heridas}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Accordion.Body>
+        </Accordion.Item>
+
+        </Accordion>
+
+        <Accordion defaultActiveKey="0">
+
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Características</Accordion.Header>
+          <Accordion.Body>
+            <Table striped>
+              <tbody>
+                <tr>
+                  <th>Artes Marciales</th>
+                  <td>{personaje.conocimientos.arteMarcial}</td>
+                  <th>Atletismo</th>
+                  <td>{personaje.conocimientos.atletismo}</td>
+                </tr>
+                <tr>
+                  <th>Arma de Fuego</th>
+                  <td>{personaje.conocimientos.armaFuego}</td>
+                  <th>Diplomacia</th>
+                  <td>{personaje.conocimientos.diplomacia}</td>
+                </tr>
+                <tr>
+                  <th>Callejeo</th>
+                  <td>{personaje.conocimientos.callejeo}</td>
+                  <th>Ciencias</th>
+                  <td>{personaje.conocimientos.ciencias}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Accordion.Body>
+        </Accordion.Item>      </Accordion>
+
+        <Accordion defaultActiveKey="0">
+
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Objetos</Accordion.Header>
+          <Accordion.Body>
+            <ListGroup>
+              {personaje.cosas.map((cosa) => {
+                return <ListGroup.Item key={cosa}>{cosa}</ListGroup.Item>;
+              })}
+            </ListGroup>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 };
