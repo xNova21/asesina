@@ -1,7 +1,9 @@
 .title{
     width: 100%;
 }
-
+.black{
+    background: black;
+}
 .red{
     background: red;
 }
@@ -16,4 +18,8 @@
 }
 .brown{
     background:brown;
+}
+*{
+    font-family: 'Ink Free', Courier, monospace;
+    font-weight: bold;
 }

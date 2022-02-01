@@ -1,119 +1,115 @@
-import { Table, ListGroup, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import "..";
+import title from "./images/titulo.png";
 
-let personaje = {
-  nombre: "Vlada",
-  nacionalidad: "Bosnia",
-  sexo: "Mujer",
-  arma: "Pistola con silenciador",
-  ojos: "Azules",
-  pelo: "Rubio",
-  descripcion: ["fuerte", "agil", "guapa", "culta"],
-  puntosConocimiento: 0,
-  conocimientos: {
-    arteMarcial: 0,
-    atletismo: 0,
-    armaFuego: 0,
-    diplomacia: 0,
-    callejeo: 0,
-    ciencias: 0,
-  },
-  drama: 0,
-  cosas: ["cuerda", "ganzua"],
-  palabras: [],
-  heridas: 0,
-};
-const Character = () => {
+// let personaje = {
+//   nombre: "Vlada",
+//   nacionalidad: "Bosnia",
+//   sexo: "Mujer",
+//   arma: "Pistola con silenciador",
+//   ojos: "Azules",
+//   pelo: "Rubio",
+//   descripcion: ["fuerte", "agil", "guapa", "culta"],
+//   puntosConocimiento: 0,
+//   conocimientos: {
+//     "Artes Marciales": 0,
+//     Atletismo: 0,
+//     "Armas fuego": 0,
+//     Diplomacia: 0,
+//     Callejeo: 0,
+//     Ciencias: 0,
+//   },
+//   drama: 0,
+//   cosas: ["cuerda", "ganzua"],
+//   palabras: [],
+//   heridas: 4,
+// };
+
+const Character2 = (props) => {
+  let personaje = props.personaje
+  let conocimientos = Object.keys(personaje.conocimientos);
+  let handicap;
+  if (personaje.heridas === 1 || personaje.heridas === 2) {
+    handicap = "Leve";
+  }
+  if (personaje.heridas === 3 || personaje.heridas === 4) {
+    handicap = "Grave";
+  }
+  if (personaje.heridas === 5) {
+    handicap = "Critico";
+  }
+  if (personaje.heridas === 6) {
+    handicap = "Muerto";
+  }
   return (
-    <div>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Datos del sospechoso</Accordion.Header>
-          <Accordion.Body>
-            <Table striped variant="dark">
-              <tbody>
-                <tr>
-                  <th>Nombre</th>
-                  <td colSpan={3}>{personaje.nombre}</td>
-                </tr>
-                <tr>
-                  <th>Nacionalidad</th>
-                  <td>{personaje.nacionalidad}</td>
-                  <th>Sexo</th>
-                  <td>{personaje.sexo}</td>
-                </tr>
-                <tr>
-                  <th>Ojos</th>
-                  <td>{personaje.ojos}</td>
-                  <th>Pelo</th>
-                  <td>{personaje.pelo}</td>
-                </tr>
-                <tr>
-                  <th colSpan={4}>Descripción</th>
-                </tr>
-                <tr>
-                  {personaje.descripcion.map((one) => {
-                    return <td key={one}>{one}</td>;
-                  })}
-                </tr>
-                <tr>
-                  <th>Arma</th>
-                  <td colSpan={3}>{personaje.arma}</td>
-                </tr>
-                <tr>
-                  <th>Heridas</th>
-                  <td colSpan={3}>{personaje.heridas}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </Accordion.Body>
-        </Accordion.Item>
-
-        </Accordion>
-
-        <Accordion defaultActiveKey="0">
-
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Características</Accordion.Header>
-          <Accordion.Body>
-            <Table striped>
-              <tbody>
-                <tr>
-                  <th>Artes Marciales</th>
-                  <td>{personaje.conocimientos.arteMarcial}</td>
-                  <th>Atletismo</th>
-                  <td>{personaje.conocimientos.atletismo}</td>
-                </tr>
-                <tr>
-                  <th>Arma de Fuego</th>
-                  <td>{personaje.conocimientos.armaFuego}</td>
-                  <th>Diplomacia</th>
-                  <td>{personaje.conocimientos.diplomacia}</td>
-                </tr>
-                <tr>
-                  <th>Callejeo</th>
-                  <td>{personaje.conocimientos.callejeo}</td>
-                  <th>Ciencias</th>
-                  <td>{personaje.conocimientos.ciencias}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </Accordion.Body>
-        </Accordion.Item>      </Accordion>
-
-        <Accordion defaultActiveKey="0">
-
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Objetos</Accordion.Header>
-          <Accordion.Body>
+    <Container>
+      <Row>
+        <Col>
+          <img alt="ASESINA" className="title" src={title} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card className="bg-dark text-white">
+            <Card.Title className="text-center ">DESCRIPCION</Card.Title>
+            <ListGroup>
+              {personaje.descripcion.map((carac) => {
+                carac = carac[0].toUpperCase() + carac.substring(1);
+                return <ListGroup.Item key={carac}>{carac}</ListGroup.Item>;
+              })}
+            </ListGroup>
+          </Card>
+          <Card className="bg-dark text-white">
+            <Card.Title className="text-center">CONOCIMIENTOS</Card.Title>
+            <ListGroup>
+              {conocimientos.map((conocimiento) => {
+                return (
+                  <ListGroup.Item key={conocimiento}>
+                    <Row>
+                      <Col xs={9}>{conocimiento}</Col>
+                      <Col>{personaje.conocimientos[conocimiento]}</Col>
+                    </Row>
+                  </ListGroup.Item>
+                );
+              })}
+            </ListGroup>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Title className="bg-dark text-white text-center">
+              PUNTOS DE DRAMA
+            </Card.Title>
+            <Card.Body className="text-center">{personaje.drama}</Card.Body>
+          </Card>
+          <Card>
+            <Card.Title className="bg-dark text-white text-center">
+              HERIDAS
+            </Card.Title>
+            <Card.Body className="text-center">
+              {personaje.heridas} {handicap}
+            </Card.Body>
+          </Card>
+          <Card className="bg-dark text-white">
+            <Card.Title className="text-center">TUS COSAS</Card.Title>
             <ListGroup>
               {personaje.cosas.map((cosa) => {
+                cosa = cosa[0].toUpperCase() + cosa.substring(1);
                 return <ListGroup.Item key={cosa}>{cosa}</ListGroup.Item>;
               })}
             </ListGroup>
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-    </div>
+          </Card>
+          <Card className="bg-dark text-white">
+            <Card.Title className="text-center">TUS PALABRAS</Card.Title>
+            <ListGroup>
+              {personaje.palabras.map((palabra) => {
+                return <ListGroup.Item key={palabra}>{palabra}</ListGroup.Item>;
+              })}
+            </ListGroup>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
-export default Character;
+export default Character2;
