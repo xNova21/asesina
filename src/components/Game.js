@@ -1,4 +1,5 @@
-import Character from "./Character";
+import {Container} from "react-bootstrap";
+import Juego from "./Juego/Juego"
 let personaje = {
     nombre: "Vlada",
     nacionalidad: "Bosnia",
@@ -12,7 +13,7 @@ let personaje = {
       "Artes Marciales": 0,
       Atletismo: 0,
       "Armas fuego": 0,
-      Diplomacia: 0,
+      Diplomacia: 4,
       Callejeo: 0,
       Ciencias: 0,
     },
@@ -22,6 +23,8 @@ let personaje = {
     heridas: 4,
   };
 const Game = () =>{
-return(<Character personaje={personaje}/>)
+return(<Container >
+<Juego/>
+</Container>)
 }
 export default Game
