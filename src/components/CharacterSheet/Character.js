@@ -35,7 +35,7 @@ const Character2 = (props) => {
         </Col>
         <Col>
           <Drama drama={personaje.drama} />
-          <Heridas heridas={personaje.heridas}/>
+          <Heridas heridas={personaje.heridas} />
           <Card className="bg-dark text-white">
             <Card.Title className="text-center">TUS COSAS</Card.Title>
             <ListGroup>
