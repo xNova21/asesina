@@ -3,9 +3,9 @@ import "./micss.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 // COMPONENTS
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Game from "./components/Game";
+import Home from "./components/Home/Home";
+import Login from "./components/Usuario/Login";
+import Game from "./components/Juego/Game";
 
 function App() {
   return (

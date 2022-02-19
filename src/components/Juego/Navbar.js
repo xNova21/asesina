@@ -1,4 +1,5 @@
-import  {Navbar, NavDropdown, Nav, Offcanvas, Container, Form, FormControl, Button} from "react-bootstrap"
+import  {Navbar, NavDropdown, Nav, Offcanvas, Container, Form, FormControl, Button} from "react-bootstrap";
+import Ficha from "./BotonFicha"
 const Navbara = () =>{
 return(<Navbar bg="light" expand={false} sticky="top">
 <Container fluid>
@@ -14,7 +15,7 @@ return(<Navbar bg="light" expand={false} sticky="top">
     </Offcanvas.Header>
     <Offcanvas.Body>
       <Nav className="justify-content-end flex-grow-1 pe-3" >
-        <Nav.Link href="#action1">Home</Nav.Link>
+        <Ficha/>
         <Nav.Link href="#action2">Ficha policial</Nav.Link>
         <Nav.Link href="#action2">Guardar partida</Nav.Link>
         <Nav.Link href="#action2">Cargar partida</Nav.Link>

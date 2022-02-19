@@ -1,8 +1,8 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 // Components
-import MyNavbar from "./MyNavbar";
+import MyNavbar from "../MyNavbar";
 
 const Login = () => {
   let url = "http://localhost:5000";
@@ -18,8 +18,9 @@ const Login = () => {
     console.log(log);
   };
   return (
-    <div>
+      <Container>
       <MyNavbar />
+      
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicText" >
           <Form.Label>Usuario</Form.Label>
@@ -45,7 +46,7 @@ const Login = () => {
           Enviar
         </Button>
       </Form>
-    </div>
+      </Container>
   );
 };
 export default Login;

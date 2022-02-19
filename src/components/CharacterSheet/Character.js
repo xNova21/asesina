@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup, Image } from "react-bootstrap";
 import "../..";
 import title from "../images/titulo.png";
 import Description from "./Description";
@@ -6,8 +6,29 @@ import Conocimientos from "./Conocimientos";
 import Drama from "./Drama";
 import Heridas from "./Heridas";
 
-const Character2 = (props) => {
-  let personaje = props.personaje;
+const Character = () => {
+  let personaje = {
+    nombre: "Vlada",
+    nacionalidad: "Bosnia",
+    sexo: "Mujer",
+    arma: "Pistola con silenciador",
+    ojos: "Azules",
+    pelo: "Rubio",
+    descripcion: ["fuerte", "agil", "guapa", "culta"],
+    puntosConocimiento: 0,
+    conocimientos: {
+      "Artes Marciales": 0,
+      Atletismo: 0,
+      "Armas fuego": 0,
+      Diplomacia: 4,
+      Callejeo: 0,
+      Ciencias: 0,
+    },
+    drama: 0,
+    cosas: ["cuerda", "ganzua"],
+    palabras: [],
+    heridas: 4,
+  };
   let handicap;
   if (personaje.heridas === 1 || personaje.heridas === 2) {
     handicap = "Leve";
@@ -25,7 +46,7 @@ const Character2 = (props) => {
     <Container>
       <Row>
         <Col>
-          <img alt="ASESINA" className="title" src={title} />
+          <Image fluid src={title} />
         </Col>
       </Row>
       <Row>
@@ -58,4 +79,4 @@ const Character2 = (props) => {
     </Container>
   );
 };
-export default Character2;
+export default Character;

@@ -1,6 +1,5 @@
 import {Container} from "react-bootstrap";
-import Character2 from "./CharacterSheet/Character";
-import Juego from "./Juego/Juego"
+import Juego from "./Juego"
 let personaje = {
     nombre: "Vlada",
     nacionalidad: "Bosnia",
