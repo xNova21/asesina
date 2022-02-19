@@ -3,16 +3,21 @@ import "./micss.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 // COMPONENTS
-import Home from "./components/Home/Home";
+import Home from "./components/Datos/Home";
 import Login from "./components/Usuario/Login";
-import Game from "./components/Juego/Game";
+import Juego from "./components/Juego/Juego";
+import Libros from "./components/Datos/Libros";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/libros" element={<Libros />}>
+
+      </Route>
+
       <Route path="/iniciosesion" element={<Login />} />
-      <Route path="/juego" element={<Game />} />
+      <Route path="/juego/:libro" element={<Juego />} />
     </Routes>
   );
 }

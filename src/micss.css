@@ -1,6 +1,3 @@
-.title{
-    width: 100%;
-}
 .black{
     background: black;
 }
@@ -22,4 +19,8 @@
 *{
     font-family: 'Ink Free', Courier, monospace;
     font-weight: bold;
+}
+.font{
+    font-family:  monospace;
+
 }

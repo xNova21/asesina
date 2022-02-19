@@ -1,8 +1,7 @@
 import { Button, Offcanvas } from "react-bootstrap";
 import { useState } from "react";
-import Character from "../CharacterSheet/Character";
-
-function Ficha() {
+import Cargadas from "../Partidas/Cargar"
+function Cargar() {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -11,18 +10,17 @@ function Ficha() {
     return (
       <>
         <Button variant="link" onClick={handleShow} className="fs-2 fw-bolder">
-          Ficha Policial
+          Cargar
         </Button>
-  
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title className="fs-1 fw-bolder">Ficha policial</Offcanvas.Title>
+            <Offcanvas.Title>Cargar</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Character/>
+            <Cargadas/>
           </Offcanvas.Body>
         </Offcanvas>
       </>
     );
   }
-  export default Ficha
+  export default Cargar

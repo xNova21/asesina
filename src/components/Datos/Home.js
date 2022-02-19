@@ -1,7 +1,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import MyNavbar from "../MyNavbar";
-import Lateral from "./Lateral";
+import Lateral from "../Lateral";
 import Info from "./Info";
 import principal from "../images/Home.png";
 const Home = () => {
@@ -9,15 +9,15 @@ const Home = () => {
     <Container>
       <MyNavbar />
       <Row>
-        <Col xs={4}>
-          <Lateral  />
+        <Col xs={5} className="mt-5">
+          <Lateral />
         </Col>
         <Col>
-          <Info/>
+          <Info />
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className="mt-5">
           <Image fluid src={principal} alt="" />
         </Col>
       </Row>
