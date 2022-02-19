@@ -9,9 +9,7 @@ const Home = () => {
     <Container>
       <MyNavbar />
       <Row>
-        <Col xs={5} className="mt-5">
-          <Lateral />
-        </Col>
+        <Lateral />
         <Col>
           <Info />
         </Col>

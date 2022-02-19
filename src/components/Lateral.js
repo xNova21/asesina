@@ -9,7 +9,7 @@ import lateral6 from "./images/lateral6.png";
 
 const Lateral = () => {
   return (
-    <Col className="h-20">
+    <Col xs={5} className="mt-3">
       <Row>
         <Link to="/">
           <Image fluid src={lateral1} />
@@ -26,7 +26,7 @@ const Lateral = () => {
         </Link>
       </Row>
       <Row>
-        <Link to="/libros">
+        <Link to="/juego">
           <Image fluid src={lateral4} />
         </Link>
       </Row>
