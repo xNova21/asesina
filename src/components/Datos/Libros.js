@@ -16,11 +16,10 @@ const Libros = () => {
     console.log(event.target.id);
   };
   return (
-    <Container className="overflow-hidden">
+    <Container>
       <MyNavbar />
       <Row>
         <Lateral />
-
         <Col>
           <Container>
             <Card className="mt-5">

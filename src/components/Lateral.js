@@ -31,12 +31,12 @@ const Lateral = () => {
         </Link>
       </Row>
       <Row>
-        <Link to="/libros">
+        <Link to="/info">
           <Image fluid src={lateral5} />
         </Link>
       </Row>
       <Row>
-        <Link to="/libros">
+        <Link to="/enlaces">
           <Image fluid src={lateral6} />
         </Link>
       </Row>
