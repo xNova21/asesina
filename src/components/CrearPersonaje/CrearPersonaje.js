@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import CrearDescripcion from "./CrearDescripcion";
 import CrearConocimientos from "./CrearConocimientos";
 import MyNavbar from "../MyNavbar";
+import Intro from "./Intro";
 const CrearPersonaje = () => {
+  let [intro, setIntro] = useState({leido: false})
+  let leidoHandle=()=>{
+    setIntro({leido: true})
+  }
   let [personaje, setPersonaje] = useState({
     nombre: "Vlada",
     nacionalidad: "Bosnia",
@@ -28,10 +33,15 @@ const CrearPersonaje = () => {
     setPersonaje({ ...personaje, [atributo]: datos });
   };
   return (
-    <Container><MyNavbar />
-      {!personaje.descripcion ? (
+    <Container>
+      <MyNavbar />
+      {!intro.leido ? <Intro onLeido={leidoHandle}/> : !personaje.descripcion ? (
         <CrearDescripcion onCambiosHandle={cambiosHandler} />
-      ) : !personaje.puntosConocimiento? <CrearConocimientos conocimientos={personaje.conocimientos}/>: <></>}
+      ) : !personaje.puntosConocimiento ? (
+        <CrearConocimientos conocimientos={personaje.conocimientos} />
+      ) : (
+        <></>
+      )}
     </Container>
   );
 };

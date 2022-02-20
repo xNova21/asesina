@@ -1,15 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Dado from "./Dado1";
-import Dado2 from "./Dado2";
 const Dados = () => {
   return (
     <Container>
       <Row>
         <Col>
-          <Dado />
+          <Dado color="blanco"/>
         </Col>
         <Col>
-          <Dado2 />
+          <Dado color="rojo"/>
         </Col>
       </Row>
     </Container>

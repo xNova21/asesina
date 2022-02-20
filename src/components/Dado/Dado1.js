@@ -1,14 +1,11 @@
 import { useState } from "react";
 import "./Dado.css";
-const Dado = () => {
+const Dado = (props) => {
   let [style, setStyle] = useState({
     transform: "translateY(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
   });
   let time = 2;
   let tirar = () => {
-    setStyle({
-      transform: "translateY(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
-    });
     setTimeout(() => {
       console.log(style);
       const randomValue = Math.floor(Math.random() * 6 + 1);
@@ -57,38 +54,14 @@ const Dado = () => {
   return (
     <div className="container1">
       <div className="cube" style={style} onClick={tirar}>
-        <div className="cube-face blanco front">
+        <div className={`cube-face ${props.color} front`}>
           <div className="inside">
             <span className="dot"></span>
           </div>
         </div>
-        <div className="cube-face blanco back">
+        <div className={`${props.color} cube-face back`}>
           <div className="inside">
             <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </div>
-        <div className="cube-face blanco left">
-          <div className="inside">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </div>
-        <div className="cube-face blanco right">
-          <div className="inside">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </div>
-        <div className="cube-face blanco top">
-          <div className="inside">
             <span className="dot"></span>
             <span className="dot"></span>
             <span className="dot"></span>
@@ -96,7 +69,31 @@ const Dado = () => {
             <span className="dot"></span>
           </div>
         </div>
-        <div className="cube-face blanco bottom">
+        <div className={`${props.color} cube-face left`}>
+          <div className="inside">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
+        </div>
+        <div className={`${props.color} cube-face right`}>
+          <div className="inside">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
+        </div>
+        <div className={`${props.color} cube-face top`}>
+          <div className="inside">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
+        </div>
+        <div className={`${props.color} cube-face bottom`}>
           <div className="inside">
             <span className="dot"></span>
             <span className="dot"></span>

@@ -14,8 +14,7 @@ const InfoLateral = () => {
             Este es un proyecto realizado por Lucía Acosta para practicar React sin ánimo de lucro.
           </p>
           <p>El material contenido en esta página es propiedad de sus respectivos
-        autores, que autorizan su libre distribución en formato electrónico y
-        papel siempre que se conserve íntegro y de manera gratuita.</p>
+        autores, que autorizan su libre distribución de manera gratuita.</p>
         </Col>
       </Row>
       
