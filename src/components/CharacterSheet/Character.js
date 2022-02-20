@@ -6,29 +6,8 @@ import Conocimientos from "./Conocimientos";
 import Drama from "./Drama";
 import Heridas from "./Heridas";
 
-const Character = () => {
-  let personaje = {
-    nombre: "Vlada",
-    nacionalidad: "Bosnia",
-    sexo: "Mujer",
-    arma: "Pistola con silenciador",
-    ojos: "Azules",
-    pelo: "Rubio",
-    descripcion: ["fuerte", "agil", "guapa", "culta"],
-    puntosConocimiento: 0,
-    conocimientos: {
-      "Artes Marciales": 0,
-      Atletismo: 0,
-      "Armas fuego": 0,
-      Diplomacia: 4,
-      Callejeo: 0,
-      Ciencias: 0,
-    },
-    drama: 0,
-    cosas: ["cuerda", "ganzua"],
-    palabras: [],
-    heridas: 4,
-  };
+const Character = (props) => {
+  let personaje = props.personaje
   let handicap;
   if (personaje.heridas === 1 || personaje.heridas === 2) {
     handicap = "Leve";
@@ -44,12 +23,12 @@ const Character = () => {
   }
   return (
     <Container>
-      <Row>
+      <Row className="mt-3">
         <Col>
           <Image fluid src={title} />
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-3">
         <Col>
           <Description descripcion={personaje.descripcion} />
           <Conocimientos conocimientos={personaje.conocimientos} />
@@ -57,7 +36,7 @@ const Character = () => {
         <Col>
           <Drama drama={personaje.drama} />
           <Heridas heridas={personaje.heridas} />
-          <Card className="bg-dark text-white">
+          <Card className="bg-dark text-white mt-3">
             <Card.Title className="text-center">TUS COSAS</Card.Title>
             <ListGroup>
               {personaje.cosas.map((cosa) => {
@@ -66,7 +45,7 @@ const Character = () => {
               })}
             </ListGroup>
           </Card>
-          <Card className="bg-dark text-white">
+          <Card className="bg-dark text-white mt-3">
             <Card.Title className="text-center">TUS PALABRAS</Card.Title>
             <ListGroup>
               {personaje.palabras.map((palabra) => {

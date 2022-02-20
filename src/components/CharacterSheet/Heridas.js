@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap"
 
 const Heridas = (props) =>{
 return(
-    <Card className="bg-dark ">
+    <Card className="bg-dark mt-3">
             <Card.Title className="text-center text-white">
               Heridas
             </Card.Title>

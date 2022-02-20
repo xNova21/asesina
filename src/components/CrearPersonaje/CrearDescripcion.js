@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button, Card, Container, ListGroup } from "react-bootstrap";
+import { Button, Card, Container, ListGroup, Row } from "react-bootstrap";
 import MyNavbar from "../MyNavbar";
 const CrearDescripcion = (props) => {
-  let descripcion = [];
+  let [descripcion] = useState([]);
   let [todo, setTodo] = useState(false);
   const descripcionHandle = (event) => {
     if (descripcion.length < 4 && !descripcion.includes(event.target.id)) {
@@ -20,12 +20,14 @@ const CrearDescripcion = (props) => {
     }
   };
 
-  const confirmar =()=>{
-    props.onCambiosHandle("descripcion", descripcion)
-  }
+  const confirmar = () => {
+    props.onCambiosHandle("descripcion", descripcion);
+  };
   return (
-    <Container>
-      <p className="mt-3">Elige 4 caracteristicas que definan a tu personaje.</p>
+    <Container className="fs-3">
+      <p className="mt-3">
+        Elige 4 caracteristicas que definan a tu personaje.
+      </p>
       <Card className="bg-dark text-white mt-3">
         <Card.Title className="text-center">DESCRIPCION</Card.Title>
         <ListGroup>
@@ -39,7 +41,6 @@ const CrearDescripcion = (props) => {
             Diestra
           </ListGroup.Item>
           <ListGroup.Item id="temeraria" onClick={descripcionHandle}>
-            {" "}
             Temeraria
           </ListGroup.Item>
           <ListGroup.Item id="guapa" onClick={descripcionHandle}>
@@ -62,7 +63,15 @@ const CrearDescripcion = (props) => {
           </ListGroup.Item>
         </ListGroup>
       </Card>
-      {todo ? <Button onClick={confirmar} className="mt-3">Confirmar</Button> : <></>}
+      {todo ? (
+        <Row>
+          <Button variant="secondary" onClick={confirmar} className="mt-3 fs-3">
+            Confirmar
+          </Button>
+        </Row>
+      ) : (
+        <></>
+      )}
     </Container>
   );
 };

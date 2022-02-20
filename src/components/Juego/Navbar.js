@@ -9,7 +9,8 @@ import Ficha from "./BotonFicha";
 import Guardar from "./BotonGuardar";
 import Cargar from "./BotonCargar";
 
-const Navbara = () => {
+const Navbara = (props) => {
+
   return (
     <Navbar bg="light" expand={false} sticky="top">
       <Container fluid>
@@ -26,7 +27,7 @@ const Navbara = () => {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               
-              <Ficha />
+              <Ficha personaje={props.personaje}/>
               <Guardar />
               <Cargar />
 

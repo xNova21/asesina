@@ -1,4 +1,6 @@
 import Navbara from "./Navbar";
+import Cookies from "universal-cookie";
+
 import {
   Container,
   Card,
@@ -9,9 +11,12 @@ import {
   Nav,
 } from "react-bootstrap";
 const Juego = () => {
+  const cookies = new Cookies();
+  let personaje = cookies.get("personaje");
+
   return (
     <Container>
-      <Navbara/>
+      <Navbara personaje={personaje}/>
       <Card>
         <Card.Body>
           <p>texto</p>

@@ -2,7 +2,7 @@ import { Button, Offcanvas } from "react-bootstrap";
 import { useState } from "react";
 import Character from "../CharacterSheet/Character";
 
-function Ficha() {
+function Ficha(props) {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -19,7 +19,7 @@ function Ficha() {
             <Offcanvas.Title className="fs-1 fw-bolder">Ficha policial</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Character/>
+            <Character personaje={props.personaje}/>
           </Offcanvas.Body>
         </Offcanvas>
       </>

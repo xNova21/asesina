@@ -3,8 +3,7 @@ const InfoHome = () => {
   return (<Container>
     <Row className="fs-3 mt-5"><Col>
       <p>
-        Bienvenid<span className="font">@</span>s a la adaptación web
-        Asesina, una serie de mini-librojuegos de J. L. López Morales.
+        Bienvenid<span className="font">@</span>s a la adaptación web de Asesina, una serie de mini-librojuegos de J. L. López Morales.
       </p>
       <p>
         El material contenido en esta página es propiedad de sus respectivos

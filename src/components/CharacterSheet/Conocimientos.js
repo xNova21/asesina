@@ -3,7 +3,7 @@ const Conocimientos = (props) =>{
      let conocimientos = props.conocimientos
      let tipoConocimiento = Object.keys(conocimientos);
 
-    return (<Card className="bg-dark text-white">
+    return (<Card className="bg-dark text-white mt-3">
     <Card.Title className="text-center">CONOCIMIENTOS</Card.Title>
     <ListGroup>
       {tipoConocimiento.map((conocimiento) => {

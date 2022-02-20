@@ -15,13 +15,13 @@ const Intro = (props) => {
   return (
     <Container>
       {intro.textos.map((texto) => {
-        return <p className="mt-3 fs-3">{texto}</p>;
+        return <p key={intro.textos.indexOf(texto)} className="mt-3 fs-3">{texto}</p>;
       })}
       <Row>
         <Image fluid src={src} />
       </Row>
       <Row>
-        <Button className="mb-5 fs-2" onClick={props.onLeido}>
+        <Button variant="secondary" className="mb-5 fs-2" onClick={props.onLeido}>
           Empezar
         </Button>
       </Row>
