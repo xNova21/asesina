@@ -26,13 +26,13 @@ const SobreJuego = () => {
       <MyNavbar />
       <Row>
         <Lateral />
-        <Col className="mt-5">
+        <Col className="mt-5 fontEspecial">
           <Card>
             <ListGroup>
               <Button className="mb-1 fs-3" href="/juego/CrearPersonaje">Nueva Partida</Button>
               <Button className="mb-1 fs-3">Continuar</Button>
               <ListGroupItem
-                className="mb-1 fs-3"
+                className="mb-1 fs-3 text-center"
                 onClick={handleInstrucciones}
               >
                 Instrucciones

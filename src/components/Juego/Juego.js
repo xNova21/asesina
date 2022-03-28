@@ -13,12 +13,15 @@ import {
 const Juego = () => {
   const cookies = new Cookies();
   let personaje = cookies.get("personaje");
+  if(!personaje){
+    console.logf("no hay datos")
+  }
 
   return (
-    <Container>
-      <Navbara personaje={personaje}/>
-      <Card>
-        <Card.Body>
+    <Container >
+      <Navbara  personaje={personaje}/>
+      <Card >
+        <Card.Body >
           <p>texto</p>
           <Figure>
             <Figure.Image

@@ -25,11 +25,13 @@ const CrearDescripcion = (props) => {
   };
   return (
     <Container className="fs-3">
-      <p className="mt-3">
+      <p className="mt-3 font">
         Elige 4 caracteristicas que definan a tu personaje.
       </p>
-      <Card className="bg-dark text-white mt-3">
-        <Card.Title className="text-center">DESCRIPCION</Card.Title>
+      <Card className="bg-dark text-white mt-3 fontEspecial">
+        <Card.Title className="text-center fw-bold mt-2">
+          DESCRIPCION
+        </Card.Title>
         <ListGroup>
           <ListGroup.Item id="fuerte" onClick={descripcionHandle}>
             Fuerte

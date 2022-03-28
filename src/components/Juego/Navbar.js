@@ -1,20 +1,18 @@
 import {
   Navbar,
-  NavDropdown,
   Nav,
   Offcanvas,
-  Container
+  Container,
 } from "react-bootstrap";
 import Ficha from "./BotonFicha";
 import Guardar from "./BotonGuardar";
 import Cargar from "./BotonCargar";
 
 const Navbara = (props) => {
-
   return (
-    <Navbar bg="light" expand={false} sticky="top">
-      <Container fluid>
-        <Navbar.Brand href="#">Menú</Navbar.Brand>
+    <Navbar  bg="light" expand={false} sticky="top">
+      <Container fluid >
+        <Navbar.Brand className="fontEspecial fs-3 fw-bold" href="#">Menú</Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -22,25 +20,24 @@ const Navbara = (props) => {
           placement="end"
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title id="offcanvasNavbarLabel" className="fs-1 fw-bolder">Asesina</Offcanvas.Title>
+            <Offcanvas.Title
+              id="offcanvasNavbarLabel"
+              className="fs-1 fw-bolder"
+            >
+              Asesina
+            </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              
-              <Ficha personaje={props.personaje}/>
-              <Guardar />
-              <Cargar />
-
-              <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Ficha personaje={props.personaje} />
+              {props.loged ? (
+                "Login"
+              ) : (
+                <>
+                  <Guardar />
+                  <Cargar />
+                </>
+              )}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

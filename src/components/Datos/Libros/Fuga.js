@@ -8,9 +8,10 @@ const Fuga = () => {
           <Row>
             <Container className="fs-3 mt-5">
               <p>
-                LA FUGA es el cuarto volumen de una serie gratuita de
-                cinco minilibrojuegos que aparecen periódicamente en la revista
-                electrónica de Nosolorol Ediciones.
+                <span className="fontEspecial fw-bold">LA FUGA</span> es el
+                cuarto volumen de una serie gratuita de cinco minilibrojuegos
+                que aparecen periódicamente en la revista electrónica de
+                Nosolorol Ediciones.
               </p>
             </Container>
           </Row>

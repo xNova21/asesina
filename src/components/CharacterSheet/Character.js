@@ -5,9 +5,10 @@ import Description from "./Description";
 import Conocimientos from "./Conocimientos";
 import Drama from "./Drama";
 import Heridas from "./Heridas";
+import Datos from "./Datos";
 
 const Character = (props) => {
-  let personaje = props.personaje
+  let personaje = props.personaje;
   let handicap;
   if (personaje.heridas === 1 || personaje.heridas === 2) {
     handicap = "Leve";
@@ -22,10 +23,16 @@ const Character = (props) => {
     handicap = "Muerto";
   }
   return (
-    <Container>
+    <Container className="fontEspecial fw-bold fs-5">
+      
       <Row className="mt-3">
         <Col>
           <Image fluid src={title} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Datos datos={props.personaje}/>
         </Col>
       </Row>
       <Row className="mt-3">

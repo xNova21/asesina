@@ -9,13 +9,13 @@ function Guardar() {
   
     return (
       <>
-        <Button variant="link" onClick={handleShow} className="fs-2 fw-bolder">
+        <Button variant="info" onClick={handleShow} className="fs-2 fontEspecial fw-bold">
           Guardar
         </Button>
   
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title className="fs-1 fw-bolder">Guardar</Offcanvas.Title>
+            <Offcanvas.Title className="fs-1 fw-bold fontEspecial">Guardar</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Guardadas/>

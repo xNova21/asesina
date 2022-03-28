@@ -8,7 +8,7 @@ const Venganza = () => {
           <Row>
             <Container className="fs-3 mt-5">
               <p>
-                EL DULCE BESO DE LA VENGANZA es el último volumen de una serie
+                <span className="fontEspecial fw-bold">EL DULCE BESO DE LA VENGANZA</span> es el último volumen de una serie
                 gratuita de cinco minilibrojuegos que han aparecido
                 periódicamente en la revista electrónica de Nosolorol Ediciones.
               </p>

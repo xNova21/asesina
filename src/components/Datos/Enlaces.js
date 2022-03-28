@@ -14,7 +14,7 @@ const Enlaces = () => {
       <Row>
         <Lateral />
         <Col className="mt-3">
-          <p className="fs-2 mb-3">Enlaces</p>
+          <p className="fs-1 mb-3 fontEspecial fw-bold">Enlaces</p>
           <p className="mb-3 fw-bolder">Página web de Nosolorol Ediciones:</p>
           <p onClick={pageHandler} className="fw-normal">
             http://www.nosolorol.com
@@ -37,9 +37,7 @@ const Enlaces = () => {
         </Col>
       </Row>
       <Row>
-        <Col>
-          
-        </Col>
+        <Col></Col>
       </Row>
     </Container>
   );

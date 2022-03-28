@@ -9,12 +9,12 @@ function Cargar() {
   
     return (
       <>
-        <Button variant="link" onClick={handleShow} className="fs-2 fw-bolder">
+        <Button variant="success" onClick={handleShow} className="fs-2 fontEspecial fw-bold">
           Cargar
         </Button>
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Cargar</Offcanvas.Title>
+            <Offcanvas.Title className="fs-1 fw-bold fontEspecial">Cargar</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Cargadas/>

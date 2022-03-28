@@ -23,36 +23,35 @@ const CrearConocimientos = (props) => {
     props.onCambiosHandle("puntosConocimiento", true);
   };
   return (
-    <Container>
-      <Row className="fs-3">
-        <Card className="bg-dark text-white mt-3 text-center ">
-          <Card.Title>Puntos restantes</Card.Title>
-          <ListGroup>
-            <ListGroup.Item>{puntos}</ListGroup.Item>
-          </ListGroup>
-        </Card>
-        <Card className="bg-dark text-white mt-3">
-          <Card.Title className="text-center">CONOCIMIENTOS</Card.Title>
-          <ListGroup>
-            {tipoConocimiento.map((conocimiento) => {
-              return (
-                <ListGroup.Item key={conocimiento}>
-                  <Row>
-                    <Col xs={7}>{conocimiento}</Col>
-                    <Col id={conocimiento} onClick={puntosHandler}>
-                      -
-                    </Col>
-                    <Col>{conocimientos[conocimiento]}</Col>
-                    <Col id={conocimiento} onClick={puntosHandler}>
-                      +
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-              );
-            })}
-          </ListGroup>
-        </Card>
-      </Row>
+    <Container className="fs-3 fontEspecial ">
+      <p className="font mt-2">Reparte tus puntos de conocimiento.</p>
+      <Card className="bg-dark text-white mt-3 text-center fw-bold">
+        <Card.Title className="mt-2 fs-3">Puntos restantes</Card.Title>
+        <ListGroup>
+          <ListGroup.Item>{puntos}</ListGroup.Item>
+        </ListGroup>
+      </Card>
+      <Card className="bg-dark text-white mt-3 fw-bold">
+        <Card.Title className="text-center mt-2 fs-3">CONOCIMIENTOS</Card.Title>
+        <ListGroup>
+          {tipoConocimiento.map((conocimiento) => {
+            return (
+              <ListGroup.Item key={conocimiento}>
+                <Row>
+                  <Col xs={7}>{conocimiento}</Col>
+                  <Col id={conocimiento} onClick={puntosHandler}>
+                    -
+                  </Col>
+                  <Col>{conocimientos[conocimiento]}</Col>
+                  <Col id={conocimiento} onClick={puntosHandler}>
+                    +
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+            );
+          })}
+        </ListGroup>
+      </Card>
       {puntos === 0 ? (
         <Row>
           <Button variant="secondary" className="mt-3 fs-3" onClick={confirmar}>

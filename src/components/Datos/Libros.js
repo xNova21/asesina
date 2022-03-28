@@ -22,7 +22,7 @@ const Libros = () => {
         <Lateral />
         <Col>
           <Container>
-            <Card className="mt-5">
+            <Card className="mt-5 fontEspecial fw-bold">
               <Card.Title className="fs-2 fw-bolder">Saga Asesina</Card.Title>
               <Card.Body>
                 <Row className=" fs-3 mb-3" onClick={handleLibro} id="lineas">
@@ -58,7 +58,7 @@ const Libros = () => {
       ) : (
         <></>
       )}
-      <Row className="fs-5 mt-3">
+      <Row className="fs-4 mt-3">
         {" "}
         <p>
           Inspirado en “sLAng: Historias sobre una misma historia” y en el cine

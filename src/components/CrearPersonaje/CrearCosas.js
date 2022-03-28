@@ -26,12 +26,12 @@ const CrearCosas = (props) => {
   };
   return (
     <Container className="fs-3">
-      <p className="mt-3">
+      <p className="mt-3 font">
         Empiezas la aventura con tu pistola con silenciador y dos de los
         siguientes objetos que puedes elegir a voluntad:{" "}
       </p>
-      <Card className="bg-dark text-white mt-3">
-        <Card.Title className="text-center">Tus Cosas</Card.Title>
+      <Card className="bg-dark text-white mt-3 fontEspecial fw-bold">
+        <Card.Title className="text-center fs-3">Tus Cosas</Card.Title>
         <ListGroup>
           <ListGroup.Item onClick={cosasHandle} id="granada">Granada</ListGroup.Item>
           <ListGroup.Item onClick={cosasHandle} id="puñal">Puñal</ListGroup.Item>

@@ -6,7 +6,7 @@ import InfoHome from "./InfoHome";
 import principal from "../images/Home.png";
 const Home = () => {
   return (
-    <Container>
+    <Container >
       <MyNavbar />
       <Row>
         <Lateral />

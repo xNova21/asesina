@@ -38,6 +38,7 @@ const CrearPersonaje = () => {
   const guardarDatos = () => {
     const cookies = new Cookies();
     cookies.set("personaje", personaje);
+    window.location.href = "/juego/lineas";
     console.log(cookies.get("personaje"));
   };
   return (

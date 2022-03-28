@@ -16,11 +16,10 @@
 .brown{
     background:brown;
 }
-*{
+.fontEspecial{
     font-family: 'Ink Free', Courier, monospace;
-    font-weight: bold;
 }
 .font{
-    font-family:  monospace;
+    font-family: 'Alike', serif, monospace;
 
 }

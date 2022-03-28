@@ -8,7 +8,7 @@ const Tierra = () => {
           <Row>
             <Container className="fs-3 mt-5">
               <p>
-                LA TIERRA PROMETIDA es el segundo volumen de una serie
+              <span className="fontEspecial fw-bold">LA TIERRA PROMETIDA</span> es el segundo volumen de una serie
                 gratuita de cinco minilibrojuegos que irán saliendo
                 periódicamente en la revista electrónica de Nosolorol Ediciones.
               </p>
