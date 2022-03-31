@@ -6,7 +6,10 @@ import CrearCosas from "./CrearCosas";
 import MyNavbar from "../MyNavbar";
 import Intro from "./Intro";
 import Cookies from "universal-cookie";
+import { useNavigate } from 'react-router-dom';
+
 const CrearPersonaje = () => {
+  let navigate = useNavigate();
   let [intro, setIntro] = useState({ leido: false });
   let leidoHandle = () => {
     setIntro({ leido: true });
@@ -38,7 +41,7 @@ const CrearPersonaje = () => {
   const guardarDatos = () => {
     const cookies = new Cookies();
     cookies.set("personaje", personaje);
-    window.location.href = "/juego/lineas";
+    navigate("/juego/lineas");
     console.log(cookies.get("personaje"));
   };
   return (
