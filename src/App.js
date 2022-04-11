@@ -2,6 +2,8 @@
 import "./micss.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
+
+
 // COMPONENTS
 import Home from "./components/Datos/Home";
 import Login from "./components/Usuario/Login";

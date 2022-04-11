@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import src from "../images/Juego/Intro.png";
 const Intro = (props) => {
   let [intro, setIntro] = useState({
     textos: [
@@ -18,7 +17,7 @@ const Intro = (props) => {
         return <p key={intro.textos.indexOf(texto)} className="mt-3 fs-3 font">{texto}</p>;
       })}
       <Row>
-        <Image fluid src={src} />
+        <Image fluid src="https://res.cloudinary.com/do8tmezpd/image/upload/v1648911926/gamebook-1/Intro_eubc1h.png" />
       </Row>
       <Row>
         <Button variant="secondary" className="mb-5 fs-2" onClick={props.onLeido}>
