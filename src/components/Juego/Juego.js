@@ -35,9 +35,18 @@ const Juego = () => {
 
   return (
     <Container>
-      {/* {console.log(HistoriaTemp[2])} */}
+      {console.log(HistoriaTemp[2])}
       <MiNavbar personaje={personaje} /> {console.log(pantalla)}
-      {pantalla.ficha === "chequeo" && <FuncionChequeo personaje={personaje} onChangePantalla={handlePantalla} modificadores={fichaActual.modificadores}/>}
+      {pantalla.ficha === "chequeo" && (
+        <FuncionChequeo
+          personaje={personaje}
+          onChangePantalla={handlePantalla}
+          onChangeFicha={handleFichaActual}
+          modificadores={fichaActual.modificadores}
+          exito={fichaActual.exito}
+          fracaso={fichaActual.fracaso}
+        />
+      )}
       {pantalla.ficha === "textoJuego" && (
         <TextoJuego
           ficha={fichaActual}

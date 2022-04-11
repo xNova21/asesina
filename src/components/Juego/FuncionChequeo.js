@@ -5,16 +5,16 @@ import { useState } from "react";
 const FuncionChequeo = (props) => {
   const [activo, setActivo] = useState(false);
   const [resultado, setResultado] = useState({});
-  const [mostrarModal, setMostrar] = useState(false)
+  const [mostrarModal, setMostrar] = useState(false);
   const tirar = () => {
     setResultado({
       dadoBlanco: Math.floor(Math.random() * 6 + 1),
       dadoRojo: Math.floor(Math.random() * 6 + 1),
     });
     setActivo(true);
-    setTimeout(()=>{
-      setMostrar(true)
-    }, 3000)
+    setTimeout(() => {
+      setMostrar(true);
+    }, 3000);
   };
 
   return (
@@ -42,7 +42,18 @@ const FuncionChequeo = (props) => {
           </Button>
         }
       </Card>
-      {mostrarModal && <ModalChequeo personaje={props.personaje} dados={resultado} onChangePantalla={props.onChangePantalla} visible={mostrarModal} modificadores={props.modificadores}/>}
+      {mostrarModal && (
+        <ModalChequeo
+          exito={props.exito}
+          fracaso={props.fracaso}
+          personaje={props.personaje}
+          dados={resultado}
+          onChangePantalla={props.onChangePantalla}
+          visible={mostrarModal}
+          modificadores={props.modificadores}
+          onChangeFicha={props.onChangeFicha}
+        />
+      )}
     </Container>
   );
 };

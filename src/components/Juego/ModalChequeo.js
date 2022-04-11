@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 
 const ModalChequeo = (props) => {
+    console.log(props)
   const textos = useRef();
   const final = useRef();
   const resultadofinal = useRef();
@@ -10,7 +11,12 @@ const ModalChequeo = (props) => {
   const continuar = useRef()
 
   const [show] = useState(props.visible);
-  const handleClose = () => props.onChangePantalla("textoJuego");
+  const handleClose = () => {
+    if(resultado >= 0){
+        props.onChangeFicha(props.exito)
+    }
+    else{props.onChangeFicha(props.fracaso)}
+    props.onChangePantalla("textoJuego")};
   let resultado =
     props.dados.dadoBlanco -
     props.dados.dadoRojo +
